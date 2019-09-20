@@ -10,12 +10,16 @@ class Login extends Component {
         };
 
         // AUDRY this seems really old school...
-        //
+        // no hooks cuz is class?
+        // https://reactjs.org/docs/hooks-state.html
+        // make it a const Login = () => ...
+
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangePassword = this.onChangePassword.bind(this);
         this.onClickLogin     = this.onClickLogin.bind(this);
     };
 
+    // AUDRY - again, these seem clunky...
     onChangeUsername(e) {
         this.setState({
             username: e.target.value
@@ -29,25 +33,32 @@ class Login extends Component {
     }
 
     onClickLogin(e) {
+        // AUDRY null/garbage validators
+
         e.preventDefault();
         console.log('hey ' + this.state.username);
+
+        // AUDRY - route to DB. if get bad response - tell user
+        // if get OK, init user and route to game page
     }
-
-
-    // AUDRY null/garbage validatiors
-    // limit input string 25 char or whtvs
 
     render () {
         return (
             <div className="floating">
+                <h3>Login (and watch your console)</h3>
                 <form onSubmit={this.onClickLogin}>
                     <label>Username: </label>
+                    {/* length ok? */}
                     <input type="text"
+                           maxLength="25"
                            value={this.state.username}
                            onChange={this.onChangeUsername}
                     />
+
                     <label>Password: </label>
-                    <input type="text"
+                    {/* length ok? */}
+                    <input type="password"
+                           maxLength="60"
                            value={this.state.password}
                            onChange={this.onChangePassword}
                     />

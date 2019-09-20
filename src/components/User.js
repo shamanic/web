@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class User extends React.Component {
+// this should be secret and only looked at by the app
+// i think this may be a good candidate for a const hook thing
+class User extends Component {
     constructor(props) {
         super(props);
 
@@ -8,8 +10,6 @@ class User extends React.Component {
         // aka stateless
         //const username = props.username;
 
-        // AUDRY - no hooks cuz is class?
-        // https://reactjs.org/docs/hooks-state.html
         this.state = {
             // tbd
             // online, location, etc.
