@@ -40,6 +40,8 @@ class Login extends Component {
 
         // AUDRY - route to DB. if get bad response - tell user
         // if get OK, init user and route to game page
+        // looks like David's route is / or /index :)
+        // Need help w/ production code and Heroku
     }
 
     render () {
