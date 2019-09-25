@@ -1,74 +1,60 @@
 import React, {Component} from 'react';
 
-class Login extends Component {
+export default class Login extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             username: '',
             password: ''
-        };
-
-        // AUDRY this seems really old school...
-        // no hooks cuz is class?
-        // https://reactjs.org/docs/hooks-state.html
-        // make it a const Login = () => ...
-
-        this.onChangeUsername = this.onChangeUsername.bind(this);
-        this.onChangePassword = this.onChangePassword.bind(this);
-        this.onClickLogin     = this.onClickLogin.bind(this);
-    };
-
-    // AUDRY - again, these seem clunky...
-    onChangeUsername(e) {
-        this.setState({
-            username: e.target.value
-        })
+        }
     }
 
-    onChangePassword(e) {
-        this.setState({
-            password: e.target.value
-        })
+    handleChangeUsername = e => {
+        this.setState({ username: e.target.value })
     }
 
-    onClickLogin(e) {
+    handleChangePassword = e => {
+        this.setState({ password: e.target.value })
+    }
+
+    handleClickLogin = e => {
         // AUDRY null/garbage validators
 
         e.preventDefault();
-        console.log('hey ' + this.state.username);
+        console.log('hey ' + this.state.username + '. yr secret: ' + this.state.password);
 
         // AUDRY - route to DB. if get bad response - tell user
         // if get OK, init user and route to game page
         // looks like David's route is / or /index :)
-        // Need help w/ production code and Heroku
+        // Need help w/ production / Heroku
     }
 
     render () {
         return (
             <div className="floating">
                 <h3>Login (and watch your console)</h3>
-                <form onSubmit={this.onClickLogin}>
+                {/* de-form (ha ha) this? what is pro/con? */}
+                <form onSubmit={this.handleClickLogin}>
                     <label>Username: </label>
-                    {/* length ok? */}
+                    {/* DAVID: what username length did you set in DB? */}
                     <input type="text"
                            maxLength="25"
                            value={this.state.username}
-                           onChange={this.onChangeUsername}
+                           onChange={this.handleChangeUsername}
                     />
 
                     <label>Password: </label>
-                    {/* length ok? */}
+                    {/* DAVID: what password length did you set in DB? */}
                     <input type="password"
                            maxLength="60"
                            value={this.state.password}
-                           onChange={this.onChangePassword}
+                           onChange={this.handleChangePassword}
                     />
                     <input type="submit" value="Login" />
                 </form>
+                <button>Create New Account</button>
             </div>
         )
     }
 }
-
-export default Login;
