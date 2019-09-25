@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import NavBar from './components/NavBar';
 import Login from './components/Login';
+import User from './components/User';
+import Game from './components/Game';
 import logo from './images/logo.png'
 
 class App extends Component {
@@ -7,10 +10,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <div>
-                    <h1>Shamanic!</h1>
-                    <img src={logo} alt="Shamanic logo"/>
-                </div>
+                <NavBar />
                 <Login />
             </div>
         );
