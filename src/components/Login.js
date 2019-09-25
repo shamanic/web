@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import logo from "../images/logo.png";
+import '../css/login.css';
 
 export default class Login extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ export default class Login extends Component {
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.onClickLogin     = this.onClickLogin.bind(this);
+        this.onClickLogin      = this.onClickLogin.bind(this);
     };
 
     handleInputChange(event) {
@@ -79,9 +80,9 @@ export default class Login extends Component {
                 </form>
 
 
-                <a onClick={() => this.setState({ isRegistered: !this.state.isRegistered })}>
+                <div className="underline" onClick={() => this.setState({ isRegistered: !this.state.isRegistered })}>
                     { this.state.isRegistered ? "New User?" : "Nevermind" }
-                </a>
+                </div>
             </div>
         )
     }

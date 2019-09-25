@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import NavBar from './components/NavBar';
 import Login from './components/Login';
-import User from './components/User';
-import Game from './components/Game';
-import logo from './images/logo.png'
+// import User from './components/User';
+// import Game from './components/Game';
+// import logo from './images/logo.png'
 
-class App extends Component {
+export default class App extends Component {
     // AUDRY - wrap in router
     render() {
         return (
@@ -16,5 +16,3 @@ class App extends Component {
         );
     }
 }
-
-export default App;
