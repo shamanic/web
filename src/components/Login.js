@@ -4,18 +4,16 @@ import '../css/login.css';
 
 export default class Login extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             username: '',
-            password: '',
-            newPassword: '',
-            isRegistered: true
-        };
+            password: ''
+        }
 
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.onClickLogin      = this.onClickLogin.bind(this);
-    };
+        this.handleClickLogin  = this.handleClickLogin.bind(this);
+    }
 
     handleInputChange(event) {
         let name = event.target.name;
@@ -23,7 +21,7 @@ export default class Login extends Component {
         this.setState({ [name]: value })
     }
 
-    onClickLogin(event) {
+    handleClickLogin(event) {
         // AUDRY null/garbage validators
 
         event.preventDefault();
@@ -38,7 +36,7 @@ export default class Login extends Component {
             <div className="floating">
                 <img src={logo} alt="Shamanic logo"/>
 
-                <form onSubmit={this.onClickLogin}>
+                <form onSubmit={this.handleClickLogin}>
                     <label>Username: </label>
                     {/* DAVID: username length? */}
                     <input name="username"
@@ -57,32 +55,10 @@ export default class Login extends Component {
                            onChange={this.handleInputChange}
                     />
 
-                    {/* i'm going to move the hide/show and put stuff into components */}
-                    <div style={{ display: (this.state.isRegistered ? 'none' : 'block' )}}>
-                        <label>Match Password: </label>
-                        <input name="newPassword"
-                               type="password"
-                               maxLength="60"
-                               value={this.state.newPassword}
-                               onChange={this.handleInputChange}
-                        />
-                    </div>
-
                     <input name="login"
-                           style={{ display: (this.state.isRegistered ? 'block' : 'none' )}}
                            type="submit"
                            value="Login" />
-
-                    <input name="register"
-                           style={{ display: (this.state.isRegistered ? 'none' : 'block' )}}
-                           type="submit"
-                           value="Register" />
                 </form>
-
-
-                <div className="underline" onClick={() => this.setState({ isRegistered: !this.state.isRegistered })}>
-                    { this.state.isRegistered ? "New User?" : "Nevermind" }
-                </div>
             </div>
         )
     }
