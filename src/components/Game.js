@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import yoshi from "../images/yoshi.png";
 
-export default class Game extends Component {
+class Game extends Component {
     constructor(props) {
         super(props);
 
@@ -14,3 +14,5 @@ export default class Game extends Component {
         return <img src={yoshi} alt="yoshi"/>
     }
 }
+
+export default Game

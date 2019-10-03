@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from "../images/logo.png";
 
-export default class Login extends Component {
+class Login extends Component {
     constructor(props) {
         super(props)
 
@@ -62,3 +62,5 @@ export default class Login extends Component {
         )
     }
 }
+
+export default Login

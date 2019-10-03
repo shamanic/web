@@ -3,7 +3,7 @@ import {Route, Switch} from 'react-router-dom'
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import Game from "./components/Game";
-import Register from "./components/Register";
+import CreateUser from "./components/CreateUser";
 
 class RouterMain extends Component {
     render() {
@@ -14,7 +14,7 @@ class RouterMain extends Component {
                     {/* AUDRY - make Game the landing page - but route to Login if not authed */}
                     <Route exact path="/" component={Login}/>
                     <Route path="/Game" component={Game}/>
-                    <Route path="/Register" component={Register}/>
+                    <Route path="/CreateUser" component={CreateUser}/>
                 </Switch>
             </>
         )

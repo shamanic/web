@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import logo from "../images/logo.png";
 import '../css/navbar.css';
 
-export default class NavBar extends Component {
+class NavBar extends Component {
     constructor(props) {
         super(props);
 
@@ -17,9 +17,11 @@ export default class NavBar extends Component {
             <ul>
                 <li><div><img src={logo} alt="Shamanic logo" />Shamanic</div></li>
                 <li className="floatRight"><div>Logout</div></li>
-                <li className="floatRight"><div>Username</div></li>
+                <li className="floatRight"><div>User</div></li>
                 <li className="floatRight"><div>Game</div></li>
             </ul>
         )
     }
 }
+
+export default NavBar
