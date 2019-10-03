@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import logo from "../images/logo.png";
-import '../css/login.css';
 
 export default class Login extends Component {
     constructor(props) {

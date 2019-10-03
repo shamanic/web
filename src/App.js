@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
-import NavBar from './components/NavBar';
-import Login from './components/Login';
-// import User from './components/User';
-// import Game from './components/Game';
-// import logo from './images/logo.png'
+import RouterMain from "./RouterMain";
+import {BrowserRouter} from "react-router-dom";
 
-export default class App extends Component {
+class App extends Component {
     // AUDRY - wrap in router
     render() {
         return (
-            <div>
-                <NavBar />
-                <Login />
-            </div>
-        );
+            <>
+                <BrowserRouter>
+                    <RouterMain/>
+                </BrowserRouter>
+            </>
+        )
     }
 }
+
+export default App

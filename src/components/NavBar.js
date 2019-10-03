@@ -12,11 +12,13 @@ export default class NavBar extends Component {
     }
 
     render() {
+        // AUDRY - get rid of the divs. <nav>?
         return (
             <ul>
                 <li><div><img src={logo} alt="Shamanic logo" />Shamanic</div></li>
                 <li className="floatRight"><div>Logout</div></li>
                 <li className="floatRight"><div>Username</div></li>
+                <li className="floatRight"><div>Game</div></li>
             </ul>
         )
     }
