@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class CreateUser extends Component {
+class CreateUser extends Component {
     constructor(props) {
         super(props);
 
@@ -13,3 +13,4 @@ export default class CreateUser extends Component {
         return <text placeholder="new user!"></text>
     }
 }
+export default CreateUser
