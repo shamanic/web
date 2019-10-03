@@ -13,4 +13,5 @@ class CreateUser extends Component {
         return <text placeholder="new user!"></text>
     }
 }
+
 export default CreateUser
